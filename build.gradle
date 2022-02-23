@@ -1,0 +1,35 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+group 'de.az.ware'
+version '0.1'
+
+allprojects {
+    repositories {
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+dependencies {
+    implementation 'com.github.Abstractolotl:az-connection:main-SNAPSHOT'
+
+    implementation 'org.hibernate:hibernate-annotations:3.5.6-Final'
+    implementation 'javax.validation:validation-api:2.0.1.Final'
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(11))
+    }
+}
