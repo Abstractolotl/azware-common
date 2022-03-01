@@ -2,7 +2,7 @@ package de.az.ware.common.packets;
 
 import de.az.ware.connection.packet.Packet;
 
-public class MasterAuthenticate {
+public abstract class MasterAuthenticate {
 
     public enum Status {
         OK,

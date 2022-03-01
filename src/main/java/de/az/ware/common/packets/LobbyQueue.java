@@ -5,7 +5,7 @@ import de.az.ware.common.model.MatchType;
 
 import javax.validation.constraints.NotNull;
 
-public class LobbyQueue {
+public abstract class LobbyQueue {
 
     public enum Status {
         OK,

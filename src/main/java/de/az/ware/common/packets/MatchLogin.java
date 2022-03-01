@@ -2,7 +2,7 @@ package de.az.ware.common.packets;
 
 import de.az.ware.connection.packet.Packet;
 
-public class MatchLogin {
+public abstract class MatchLogin {
 
     public static class Request implements Packet{
 

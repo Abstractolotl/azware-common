@@ -4,7 +4,7 @@ import de.az.ware.common.model.MatchType;
 
 import java.util.Map;
 
-public class LobbyQueuePoll {
+public abstract class LobbyQueuePoll {
 
     public static class Request {
 

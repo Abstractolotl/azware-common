@@ -2,7 +2,7 @@ package de.az.ware.common.packets;
 
 import de.az.ware.connection.packet.Packet;
 
-public class Ping {
+public abstract class Ping {
 
     public static class Request implements Packet {
 

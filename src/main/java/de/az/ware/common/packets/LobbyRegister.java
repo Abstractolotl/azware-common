@@ -3,7 +3,7 @@ package de.az.ware.common.packets;
 import de.az.ware.common.model.LobbyUser;
 import javax.validation.constraints.Size;
 
-public class LobbyRegister {
+public abstract class LobbyRegister {
 
     public enum Status {
         OK,

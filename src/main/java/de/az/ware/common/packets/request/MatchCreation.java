@@ -1,11 +1,13 @@
-package de.az.ware.common.packets;
+package de.az.ware.common.packets.request;
 
 import de.az.ware.common.model.MatchType;
 import de.az.ware.connection.packet.Packet;
+import de.az.ware.connection.packet.RequestPacket;
+import de.az.ware.connection.packet.ResponsePacket;
 
 import java.util.UUID;
 
-public class MatchCreation {
+public abstract class MatchCreation {
 
     public enum Status {
         OK,
@@ -13,27 +15,17 @@ public class MatchCreation {
         ERROR
     }
 
-    public static class Request implements Packet {
+    public static class Request extends RequestPacket {
 
-        private UUID matchID;
         private MatchType matchType;
-        private String[] playerMatchTokens;
+        private UUID[] playerMatchTokens;
 
-        public Request(MatchType matchType, String[] playerMatchTokens, UUID matchID) {
+        public Request(MatchType matchType, UUID[] playerMatchTokens) {
             this.matchType = matchType;
             this.playerMatchTokens = playerMatchTokens;
-            this.matchID = matchID;
         }
 
         public Request() {
-        }
-
-        public UUID getMatchID() {
-            return matchID;
-        }
-
-        public void setMatchID(UUID matchID) {
-            this.matchID = matchID;
         }
 
         public MatchType getMatchType() {
@@ -44,16 +36,16 @@ public class MatchCreation {
             this.matchType = matchType;
         }
 
-        public String[] getPlayerMatchTokens() {
+        public UUID[] getPlayerMatchTokens() {
             return playerMatchTokens;
         }
 
-        public void setPlayerMatchTokens(String[] playerMatchTokens) {
+        public void setPlayerMatchTokens(UUID[] playerMatchTokens) {
             this.playerMatchTokens = playerMatchTokens;
         }
     }
 
-    public static class Response implements Packet {
+    public static class Response extends ResponsePacket {
 
         private Status status;
         private UUID matchID;
