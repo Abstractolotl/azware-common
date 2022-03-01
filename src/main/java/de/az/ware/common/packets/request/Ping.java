@@ -1,10 +1,11 @@
-package de.az.ware.common.packets;
+package de.az.ware.common.packets.request;
 
-import de.az.ware.connection.packet.Packet;
+import de.az.ware.connection.packet.RequestPacket;
+import de.az.ware.connection.packet.ResponsePacket;
 
 public abstract class Ping {
 
-    public static class Request implements Packet {
+    public static class Request extends RequestPacket {
 
         private String message;
 
@@ -26,7 +27,7 @@ public abstract class Ping {
 
     }
 
-    public static class Response implements Packet {
+    public static class Response extends ResponsePacket {
 
         private String message;
 
