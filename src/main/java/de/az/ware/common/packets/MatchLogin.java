@@ -1,25 +1,28 @@
 package de.az.ware.common.packets;
 
 import de.az.ware.connection.packet.Packet;
+import de.az.ware.connection.packet.RequestPacket;
+
+import java.util.UUID;
 
 public abstract class MatchLogin {
 
-    public static class Request implements Packet{
+    public static class Request extends RequestPacket {
 
-        private String matchtoken;
+        private UUID matchtoken;
 
-        public Request(String matchtoken) {
+        public Request(UUID matchtoken) {
             this.matchtoken = matchtoken;
         }
 
         public Request() {
         }
 
-        public String getMatchtoken() {
+        public UUID getMatchtoken() {
             return matchtoken;
         }
 
-        public void setMatchtoken(String matchtoken) {
+        public void setMatchtoken(UUID matchtoken) {
             this.matchtoken = matchtoken;
         }
     }
