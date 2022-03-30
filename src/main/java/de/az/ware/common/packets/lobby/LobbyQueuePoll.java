@@ -1,4 +1,4 @@
-package de.az.ware.common.packets;
+package de.az.ware.common.packets.lobby;
 
 import de.az.ware.common.model.MatchType;
 

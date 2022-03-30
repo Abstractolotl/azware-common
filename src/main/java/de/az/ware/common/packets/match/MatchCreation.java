@@ -1,4 +1,4 @@
-package de.az.ware.common.packets.request;
+package de.az.ware.common.packets.match;
 
 import de.az.ware.common.model.MatchType;
 import de.az.ware.connection.packet.Packet;
@@ -21,6 +21,7 @@ public abstract class MatchCreation {
         private UUID[] playerMatchTokens;
 
         public Request(MatchType matchType, UUID[] playerMatchTokens) {
+            super(UUID.randomUUID());
             this.matchType = matchType;
             this.playerMatchTokens = playerMatchTokens;
         }
@@ -53,7 +54,8 @@ public abstract class MatchCreation {
         public Response() {
         }
 
-        public Response(Status status, UUID matchID) {
+        public Response(UUID requestID, Status status, UUID matchID) {
+            super(requestID);
             this.status = status;
             this.matchID = matchID;
         }

@@ -1,7 +1,9 @@
-package de.az.ware.common.packets.request;
+package de.az.ware.common.packets.match;
 
 import de.az.ware.connection.packet.RequestPacket;
 import de.az.ware.connection.packet.ResponsePacket;
+
+import java.util.UUID;
 
 public abstract class Ping {
 
@@ -35,7 +37,8 @@ public abstract class Ping {
         public Response() {
         }
 
-        public Response(String message) {
+        public Response(UUID requestID, String message) {
+            super(requestID);
             this.message = message;
         }
 
